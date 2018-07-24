@@ -4,24 +4,6 @@ const dargs = require('dargs');
 describe('EYES', () => {
   jest.setTimeout(30000);
 
-  describe('Log', () => {
-    test('should log after eyes success', async () => {
-      const options = {
-        config: require.resolve('./__fixtures__/jest-default/conf.json'),
-      };
-
-      const res = await execa('node', [
-        require.resolve('jest/bin/jest'),
-        require.resolve('./__fixtures__/jest-default/test.jest'),
-        dargs(options),
-      ]);
-
-      expect(res.stdout).toContain(
-        'eyes comparison succeed for test "should work with jest v1.0.0"',
-      );
-    });
-  });
-
   describe('should works with configurations', () => {
     test('should log after eyes success', async () => {
       const options = {
